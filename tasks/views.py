@@ -64,7 +64,7 @@ def create_task(request):
             return redirect('tasks')
         except ValueError:
             return render(request, 'create_task.html', {'form': TaskForm(), 'error': 'Please provide valid data'})
-        finally:            return redirect('tasks')
+    
 
 @login_required
 def task_detail(request, task_id):
