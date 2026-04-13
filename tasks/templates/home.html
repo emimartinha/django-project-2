@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="display-5 fw-bold mb-3">Welcome to Django CRUD</h1>
+            <p class="lead text-muted mb-4">
+                Organize your daily tasks with a simple and clean Django application.
+                Create tasks, update them, mark them as completed, and keep everything under control.
+            </p>
+
+            {% if user.is_authenticated %}
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{% url 'tasks' %}" class="btn btn-primary">View Pending Tasks</a>
+                <a href="{% url 'tasks_completed' %}" class="btn btn-outline-success">View Completed Tasks</a>
+                <a href="{% url 'create_task' %}" class="btn btn-dark">Create New Task</a>
+            </div>
+            {% else %}
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{% url 'signup' %}" class="btn btn-primary">Get Started</a>
+                <a href="{% url 'login' %}" class="btn btn-outline-dark">Login</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

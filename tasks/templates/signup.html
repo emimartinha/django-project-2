@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h1 class="h3 text-center mb-4">Sign Up</h1>
+
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+
+                    <form action="{% url 'signup' %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            {{ form.as_p }}
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

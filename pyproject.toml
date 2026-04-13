@@ -1,0 +1,24 @@
+[project]
+name = "django-crud"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "EmilianoMartinha",email = "emimartinha@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django (>=6.0.4,<7.0.0)",
+    "psycopg2-binary (>=2.9.11,<3.0.0)",
+    "dj-database-url (>=3.1.2,<4.0.0)",
+    "whitenoise[brotli] (>=6.12.0,<7.0.0)",
+    "gunicorn (>=25.3.0,<26.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "django_crud", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
