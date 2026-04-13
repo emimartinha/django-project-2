@@ -6,6 +6,11 @@ This is a web application built with Django that allows users to manage tasks th
 
 The application includes user authentication, task management, and a clean interface built with Bootstrap.
 
+Live Demo
+You can access the live application here:
+https://django-crud-app-sku2.onrender.com/
+This project is deployed using Render.
+
 ## Features
 
 * User registration and authentication
